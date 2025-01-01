@@ -4,6 +4,8 @@ import './styles.css';
 import Header from './components/Header.js'
 import Footer from './components/Footer.js'
 import MoviesGrid from './components/MoviesGrid.js';
+import Watchlist from './components/Watchlist.js';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 // In react, we use components to build dynamic webpages and are reusable building blocks.
 // A component can be an info card that's used throughout the website at multiple places,
 // Instead of creating multiple calls to create it, we simply import it from the file.
@@ -13,7 +15,23 @@ function App() {
     <div className="App">
       <div className='container'>
         <Header></Header>
-        <MoviesGrid></MoviesGrid>
+        <Router>
+          <nav>
+            <ul>
+              <li>
+                <Link to='/'>Home</Link>
+              </li>
+              <li>
+                <Link to='/watchlist'>Watchlist</Link>
+              </li>
+            </ul>
+          </nav>
+          <Routes>
+            <Route path='/' element={<MoviesGrid />}></Route>
+            <Route path='/watchlist' element={<Watchlist />}></Route>
+          </Routes>
+
+        </Router>
       </div>
       <Footer></Footer>
     </div>
