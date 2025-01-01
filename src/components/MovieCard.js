@@ -20,7 +20,6 @@ export default function MovieCard({ movie }) {
                 <p className={`movie-card-rating ${getRating(movie.rating)}`}>{movie.rating}</p>
             </div>
         </div >
-
     );
 }
 
