@@ -42,7 +42,7 @@ function App() {
           </nav>
           <Routes>
             <Route path='/' element={<MoviesGrid movies={movies} watchList={watchList} toggleWatchList={toggleWatchList} />}></Route>
-            <Route path='/watchlist' element={<Watchlist watchList={watchList} toggleWatchList={toggleWatchList} />}></Route>
+            <Route path='/watchlist' element={<Watchlist watchList={watchList} movies={movies} toggleWatchList={toggleWatchList} />}></Route>
           </Routes>
         </Router>
       </div>
