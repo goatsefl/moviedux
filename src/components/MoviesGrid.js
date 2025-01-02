@@ -9,17 +9,12 @@ import MovieCard from "./MovieCard";
 // To look at simulation, download react developer tools from chrome web-store.
 // By using developer in chrome where the react website is loaded, we can check for the components and profiler for react.
 
-export default function MoviesGrid() {
+export default function MoviesGrid({ movies, watchList, toggleWatchList }) {
 
-    const [movies, setMovies] = useState([])
     const [searchTerm, setSearchTerm] = useState('');
     const [genre, searchGenre] = useState('All Genres')
     const [rating, searchRating] = useState('All')
-    useEffect(() => {
-        fetch('movies.json')
-            .then(res => res.json())
-            .then(data => setMovies(data))
-    }, [])
+
 
     const handleSearchChange = (e) => {
         setSearchTerm(e.target.value)
@@ -84,7 +79,7 @@ export default function MoviesGrid() {
                 {
                     filteredMovies.map((movie) =>
                     (
-                        <MovieCard movie={movie} key={movie.id}></MovieCard>
+                        <MovieCard movie={movie} key={movie.id} toggleWatchList={toggleWatchList} isWatchListed={watchList.includes(movie.id)}></MovieCard>
                     ))
                 }
             </div>
