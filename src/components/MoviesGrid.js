@@ -14,7 +14,9 @@ export default function MoviesGrid({ movies, watchList, toggleWatchList }) {
     const [searchTerm, setSearchTerm] = useState('');
     const [genre, searchGenre] = useState('All Genres')
     const [rating, searchRating] = useState('All')
-
+    // All the changes for rating, searchTerm and genre are handled using below methods,
+    // This is the recommended way of passing functionality as per react norms.
+    // This is also called controlled component.
 
     const handleSearchChange = (e) => {
         setSearchTerm(e.target.value)
@@ -40,7 +42,8 @@ export default function MoviesGrid({ movies, watchList, toggleWatchList }) {
             default: return false;
         }
     }
-
+    // filteredMovies take care of all the search keywords and returns the provided functionality above.
+    // The above functionality is used to change different behaviors and checks whether the movie,rating and genre are matching as per the selection on the home page.
     const filteredMovies = movies.filter(movie => {
         return matchesGenre(movie, genre) && matchesRating(movie, rating) && matchesSearchTerm(movie, searchTerm)
     })
