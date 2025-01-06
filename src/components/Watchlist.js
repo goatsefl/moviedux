@@ -13,7 +13,6 @@ export default function Watchlist({ movies, watchList, toggleWatchList }) {
                         return <MovieCard key={id} movie={movie} toggleWatchList={toggleWatchList} isWatchListed={true}></MovieCard>
                     })
                 }
-
             </div>
         </div>
     );
