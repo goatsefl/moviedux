@@ -6,10 +6,10 @@
 
 #### Template Includes :
 
-** Adding to watchlist
-** Removing from WatchList
-** Reading through WatchList
-** 2 way filter using Genre and Rating. 
+* Adding to watchlist
+* Removing from WatchList
+* Reading through WatchList
+* 2 way filter using Genre and Rating. 
 
 
 This was a course code-along from the mentor Janick Leismann : [Link](https://github.com/JannickLeismann/react-moviedux). 
